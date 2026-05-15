@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">dmp</a>
+
+        <div class="box-logo-hamburger">
+            <a href="index.html" class="navbar-logo navbar-logo-mobile">dmp</a>
+            <button class="navbar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <div class="overlay"></div> 
+        <div class="navbar-menu">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Blog</a>
+            <a href="#">About</a>
+            <a href="#">Login</a>
+        </div>
+    </nav>
+
+    <script>
+        const navbarToggle = document.querySelector(".navbar-toggle");
+        const navbarMenu = document.querySelector(".navbar-menu");
+        const overlay = document.querySelector(".overlay");
+
+        function navbarSlide(x) {
+            x.addEventListener("click", (e) => {
+                e.preventDefault();
+                navbarMenu.classList.toggle("active");
+                navbarToggle.classList.toggle("active");
+                overlay.classList.toggle("active");
+            })
+        }
+
+        navbarSlide(navbarToggle);
+        navbarSlide(overlay);
+    </script>
+</body>
+</html>
